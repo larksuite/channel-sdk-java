@@ -36,6 +36,7 @@ This documentation describes the `1.0.0-beta.1` public beta. Start with the quic
 - [Security](../SECURITY.md)
 - [Code of Conduct](../CODE_OF_CONDUCT.md)
 - [Changelog](../CHANGELOG.md)
+- [Release guide](../RELEASING.md)
 
 ## Suggested reading paths
 

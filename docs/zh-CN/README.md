@@ -36,6 +36,7 @@
 - [安全策略](../../SECURITY.zh.md)
 - [行为准则](../../CODE_OF_CONDUCT.zh.md)
 - [变更记录（英文）](../../CHANGELOG.md)
+- [发布手册](../../RELEASING.zh.md)
 
 ## 建议阅读路径
 
