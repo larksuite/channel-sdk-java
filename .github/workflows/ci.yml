@@ -23,8 +23,6 @@ jobs:
         java:
           - '8'
           - '11'
-          - '17'
-          - '21'
     steps:
       - name: Check out repository
         uses: actions/checkout@v4

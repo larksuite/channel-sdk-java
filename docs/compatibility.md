@@ -8,9 +8,9 @@ The Channel SDK and main OpenAPI SDK have independent versions. Compatibility is
 
 | Channel SDK | Minimum `oapi-sdk` | Default `oapi-sdk` | Verified JDK | Status |
 | --- | --- | --- | --- | --- |
-| `1.0.0-beta.1` | `2.8.5` | `2.8.5` | 8, 11, 17, 21 | Public beta |
+| `1.0.0-beta.1` | `2.8.5` | `2.8.5` | 8, 11 | Public beta |
 
-The bytecode target is Java 8 and the minimum Maven version is 3.6.3. CI verifies the build on JDK 8, 11, 17, and 21. Running successfully on an unlisted JDK is not a compatibility guarantee.
+The bytecode target is Java 8 and the minimum Maven version is 3.6.3. CI verifies the build on JDK 8 and 11. Running successfully on an unlisted JDK is not a compatibility guarantee.
 
 ## Dependency model
 
@@ -51,7 +51,7 @@ The high-level Channel supports only the events and content types listed in this
 To propose a different main-SDK or JDK version:
 
 1. update the dependency in a dedicated branch;
-2. run `./scripts/verify.sh` on JDK 8, 11, 17, and 21;
+2. run `./scripts/verify.sh` on every adopted release target and the newly proposed JDK;
 3. run the full unit suite and package-isolation check;
 4. compile all external-consumer examples;
 5. run credentialed Webhook/WebSocket integration tests in a secure test tenant;

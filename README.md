@@ -20,11 +20,11 @@ Use it when an application needs to receive conversations, apply safety policy, 
 
 ## Requirements
 
-- JDK 8, 11, 17, or 21
+- JDK 8 or 11
 - Maven 3.6.3 or later
 - A Lark or Feishu application with bot capability and the permissions required by the APIs it calls
 
-The project compiles Java 8 bytecode and verifies the build on JDK 8, 11, 17, and 21.
+The project compiles Java 8 bytecode and verifies the build on JDK 8 and 11.
 
 ## Installation
 

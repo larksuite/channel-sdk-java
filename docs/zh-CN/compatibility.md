@@ -8,9 +8,9 @@ Channel SDK 与主 OpenAPI SDK 独立发版。兼容承诺只覆盖本仓库验�
 
 | Channel SDK | 最低 `oapi-sdk` | 默认 `oapi-sdk` | 验证 JDK | 状态 |
 | --- | --- | --- | --- | --- |
-| `1.0.0-beta.1` | `2.8.5` | `2.8.5` | 8、11、17、21 | 公开 Beta |
+| `1.0.0-beta.1` | `2.8.5` | `2.8.5` | 8、11 | 公开 Beta |
 
-字节码目标是 Java 8，最低 Maven 版本是 3.6.3。CI 在 JDK 8、11、17 和 21 上验证构建。在未列出的 JDK 上偶然运行成功，不构成兼容保证。
+字节码目标是 Java 8，最低 Maven 版本是 3.6.3。CI 在 JDK 8、11 上验证构建。在未列出的 JDK 上偶然运行成功，不构成兼容保证。
 
 ## 依赖模型
 
@@ -51,7 +51,7 @@ SDK 可通过 `LarkChannelOptions.domain(...)` 使用主 SDK 接受的域名，H
 引入不同主 SDK 或 JDK 版本时：
 
 1. 在独立分支更新依赖；
-2. 使用 JDK 8、11、17 和 21 分别运行 `./scripts/verify.sh`；
+2. 在每个已采纳的发布目标和拟引入的 JDK 上运行 `./scripts/verify.sh`；
 3. 运行完整单测和包隔离检查；
 4. 编译全部外部消费者示例；
 5. 在安全测试租户执行带凭证的 Webhook/WebSocket 集成测试；
