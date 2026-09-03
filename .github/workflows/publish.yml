@@ -15,15 +15,15 @@ jobs:
       - name: Check out release tag
         uses: actions/checkout@v4
 
-      - name: Set up JDK 8 and Maven Central credentials
+      - name: Set up JDK 8 and OSSRH credentials
         uses: actions/setup-java@v4
         with:
           distribution: temurin
           java-version: '8'
           cache: maven
-          server-id: central
-          server-username: CENTRAL_USERNAME
-          server-password: CENTRAL_PASSWORD
+          server-id: ossrh
+          server-username: OSSRH_USERNAME
+          server-password: OSSRH_PASSWORD
           gpg-private-key: ${{ secrets.GPG_PRIVATE_KEY }}
           gpg-passphrase: GPG_PASSPHRASE
 
@@ -47,9 +47,9 @@ jobs:
       - name: Verify release
         run: ./scripts/verify.sh
 
-      - name: Upload signed bundle to Maven Central
+      - name: Deploy signed artifacts through OSSRH staging
         run: mvn --batch-mode --no-transfer-progress -Prelease deploy
         env:
-          CENTRAL_USERNAME: ${{ secrets.CENTRAL_USERNAME }}
-          CENTRAL_PASSWORD: ${{ secrets.CENTRAL_PASSWORD }}
+          OSSRH_USERNAME: ${{ secrets.OSSRH_USERNAME }}
+          OSSRH_PASSWORD: ${{ secrets.OSSRH_PASSWORD }}
           GPG_PASSPHRASE: ${{ secrets.GPG_PASSPHRASE }}
