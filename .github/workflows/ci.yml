@@ -29,6 +29,11 @@ jobs:
       - name: Check out repository
         uses: actions/checkout@v4
 
+      - name: Install verification tools
+        run: |
+          sudo apt-get update
+          sudo apt-get install --yes ripgrep
+
       - name: Set up JDK ${{ matrix.java }}
         uses: actions/setup-java@v4
         with:
